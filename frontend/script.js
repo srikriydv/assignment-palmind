@@ -51,7 +51,7 @@ $(document).ready(function () {
           usersTableBody.empty(); // Clear previous user data
           users.forEach(user => {
             usersTableBody.append(`
-              <tr>
+              <tr class="user-row" data-name="${user.name}" data-email="${user.email}">
                 <td>${user.name}</td>
                 <td>${user.email}</td>
               </tr>
@@ -88,4 +88,17 @@ $(document).ready(function () {
   
     // Auto-Redirect if Logged In
     checkLoginStatus();
+  
+    // jQuery Event to Show Modal When Row is Clicked
+    $('#usersTable').on('click', '.user-row', function () {
+      const userName = $(this).data('name');
+      const userEmail = $(this).data('email');
+  
+      // Set data in modal
+      $('#modalName').text(userName);
+      $('#modalEmail').text(userEmail);
+  
+      // Show modal
+      $('#userModal').modal('show');
+    });
   });
