@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const API_URL = 'http://localhost:3000/api/users'; // Backend API URL
+    const API_URL = 'http://localhost:3000/api/users';
   
     // Registration Form Submission
     $('#registerForm').submit(function (e) {
@@ -27,7 +27,7 @@ $(document).ready(function () {
       axios.post(`${API_URL}/login`, { email, password })
         .then(response => {
           const token = response.data.token;
-          localStorage.setItem('authToken', token); // Save token in localStorage
+          localStorage.setItem('authToken', token);
           alert('Login successful! Redirecting to home...');
           showHomePage();
         })
@@ -48,7 +48,7 @@ $(document).ready(function () {
         .then(response => {
           const users = response.data;
           const usersTableBody = $('#usersTable tbody');
-          usersTableBody.empty(); // Clear previous user data
+          usersTableBody.empty();
           users.forEach(user => {
             usersTableBody.append(`
               <tr class="user-row" data-name="${user.name}" data-email="${user.email}">
@@ -76,29 +76,25 @@ $(document).ready(function () {
         $('#registerSection').show();
         $('#loginSection').hide();
         $('#homeSection').hide();
-        $('#loginBtn').show();  // Show the login button
+        $('#loginBtn').show();
       }
     }
   
-    // Login Button Click
     $('#loginBtn').click(function () {
       $('#registerSection').hide();
       $('#loginSection').show();
     });
   
-    // Auto-Redirect if Logged In
     checkLoginStatus();
   
-    // jQuery Event to Show Modal When Row is Clicked
+
     $('#usersTable').on('click', '.user-row', function () {
       const userName = $(this).data('name');
       const userEmail = $(this).data('email');
-  
-      // Set data in modal
+
       $('#modalName').text(userName);
       $('#modalEmail').text(userEmail);
-  
-      // Show modal
+
       $('#userModal').modal('show');
     });
   });
