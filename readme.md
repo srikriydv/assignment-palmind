@@ -4,10 +4,14 @@ This project demonstrates a simple user registration and login system using a fr
 
 ## Screenshot
 ##### HomePage:
-
+![Screenshot 2024-11-25 at 7 57 00 PM](https://github.com/user-attachments/assets/ff1962d6-06d6-4505-9224-64c0aabd7fa2)
 ##### Login Page:
-
+![Screenshot 2024-11-25 at 7 57 53 PM](https://github.com/user-attachments/assets/11dde150-d5d6-4044-bce3-bcfdee188983)
 ##### Register Page:
+![Screenshot 2024-11-25 at 7 57 46 PM](https://github.com/user-attachments/assets/c24e2933-3f4e-4728-a2aa-eebd8967a494)
+##### Modal Preview
+![Screenshot 2024-11-25 at 8 04 24 PM](https://github.com/user-attachments/assets/29fb08e1-2e95-47ad-9798-3de56384ae84)
+
 
 
 ## Project Structure
